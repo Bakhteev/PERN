@@ -41,8 +41,11 @@ const CreateDevice = observer(({ show, onHide }) => {
     formData.append('brandId', device.selectedBrand.id)
     formData.append('typeId', device.selectedType.id)
     formData.append('info', JSON.stringify(info))
+    console.log(formData)
     createDevice(formData).then((data) => onHide())
   }
+
+  console.log(info);
 
   return (
     <Modal show={show} onHide={onHide} centered>

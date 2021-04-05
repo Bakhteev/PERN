@@ -13,6 +13,8 @@ const DevicePage = () => {
     fetchOneDevice(id).then((data) => setDevice(data))
   }, [])
 
+  console.log(device)
+
   return (
     <Container className="mt-3">
       <Row>
