@@ -1,12 +1,11 @@
 const path = require('path')
 const uuid = require('uuid')
-const { Device, DeviceInfo } = require('../models/models')
+const { Device, DeviceInfo, BasketDevice } = require('../models/models')
 const ApiError = require('../error/api.error')
 
 class DeviceController {
   async create(req, res, next) {
     try {
-      console.log(req)
       let { name, price, brandId, typeId, info } = req.body
       const { img } = req.files
       let fileName = uuid.v4() + '.jpg'
@@ -32,7 +31,6 @@ class DeviceController {
           })
         )
       }
-
       return res.json(device)
     } catch (e) {
       next(ApiError.badRequest(e.message))

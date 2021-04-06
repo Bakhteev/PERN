@@ -31,6 +31,9 @@ const NavigationBar = observer(() => {
             >
               Админ панель
             </Button>
+            <Button variant="outline-light" className="ml-2" >
+              Корзина
+            </Button>
             <Button variant="outline-light" className="ml-2" onClick={logOut}>
               Выйти
             </Button>
